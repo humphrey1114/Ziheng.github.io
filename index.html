@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0D0D0D" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>火了 - Burn It</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --safe-top: env(safe-area-inset-top);
+        --safe-bottom: env(safe-area-inset-bottom);
+      }
+      body {
+        font-family: 'Noto Sans SC', sans-serif;
+        overscroll-behavior: none;
+        background-color: #0D0D0D;
+        color: #E5E5E5;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        touch-action: none;
+        overflow: hidden;
+      }
+      
+      .font-hand {
+        font-family: 'Caveat', cursive;
+      }
+
+      /* Fire Animation */
+      @keyframes flicker {
+        0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+        20% { transform: scale(1.1) rotate(2deg) translateY(-2px); opacity: 1; }
+        40% { transform: scale(0.9) rotate(-1deg); opacity: 0.8; }
+        60% { transform: scale(1.05) rotate(1deg) translateY(-4px); opacity: 1; }
+        80% { transform: scale(0.95) rotate(-2deg); opacity: 0.9; }
+        100% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+      }
+      
+      .flame {
+        animation: flicker 0.1s infinite alternate;
+        filter: drop-shadow(0 0 10px rgba(255, 100, 0, 0.6));
+      }
+
+      /* Striker Texture */
+      .striker-texture {
+        background-image: repeating-linear-gradient(
+          45deg,
+          #2a1a1a,
+          #2a1a1a 2px,
+          #3a2a2a 2px,
+          #3a2a2a 4px
+        );
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#0D0D0D] h-screen w-screen overflow-hidden text-white antialiased">
+    <div id="root" class="h-full w-full"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

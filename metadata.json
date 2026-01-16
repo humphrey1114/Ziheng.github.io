@@ -1,0 +1,7 @@
+{
+  "name": "Let It Go - 算了吧",
+  "description": "Shatter your worries. 摇一摇，算了吧。",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
